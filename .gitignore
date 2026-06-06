@@ -3,14 +3,15 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.egg-info/
 
 # Virtual environment
 .venv/
 .env
 SystemCode/.env
 
-# Streamlit
-.streamlit/
+# Streamlit secrets (never commit real secrets)
+.streamlit/secrets.toml
 
 # VS Code
 .vscode/
