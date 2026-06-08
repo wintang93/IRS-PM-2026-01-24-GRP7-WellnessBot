@@ -1,10 +1,16 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 import pandas as pd
 import streamlit as st
+
+# Ensure repo root is on sys.path for Streamlit Cloud
+_repo_root = str(Path(__file__).resolve().parents[3])
+if _repo_root not in sys.path:
+    sys.path.insert(0, _repo_root)
 
 from SystemCode.wellnessbot.offline.mine_logs import run_mining
 

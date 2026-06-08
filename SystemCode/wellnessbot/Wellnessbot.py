@@ -3,8 +3,16 @@ from __future__ import annotations
 import json
 import hashlib
 import logging
+import os
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
+
+# Ensure repo root is on sys.path so `SystemCode.wellnessbot.*` imports work
+# on Streamlit Cloud (where PYTHONPATH is not set automatically).
+_repo_root = str(Path(__file__).resolve().parents[2])
+if _repo_root not in sys.path:
+    sys.path.insert(0, _repo_root)
 
 from dotenv import load_dotenv
 
